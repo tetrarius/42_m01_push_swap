@@ -6,7 +6,7 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 10:56:37 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/03 13:39:15 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/03 17:00:06 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ t_stack	*stack_init(void);
 t_node	*node_new(int value);
 void	stack_add_back(t_stack *stack, t_node *new_node);
 void	stack_free(t_stack *stack);
+int		is_number(char *str);
 
 #endif
