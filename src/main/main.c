@@ -6,12 +6,11 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 13:25:02 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/06 17:41:23 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/10 11:45:29 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	print_stack(t_stack *stack, char *name)
 {
@@ -41,12 +40,11 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		return (1);
 	}
-	print_stack(a, "A before");
-	print_stack(b, "B before");
-	pb(a, b);
-	printf("------ after pb ------\n");
-	print_stack(a, "A after");
-	print_stack(b, "B after");
+	printf("------ before ------\n");
+	print_stack(a, "A");
+	sort_2(a);
+	printf("------ after ------\n");
+	print_stack(a, "A");
 	stack_free(a);
 	stack_free(b);
 	return (0);

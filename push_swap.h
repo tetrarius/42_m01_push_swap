@@ -6,7 +6,7 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 10:56:37 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/06 17:40:24 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/10 11:52:13 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,9 @@ int		is_sorted(t_stack *stack);
 void	sa(t_stack *a);
 void	pb(t_stack *a, t_stack *b);
 void	pa(t_stack *a, t_stack *b);
+void	ra(t_stack *a);
+void	rra(t_stack *a);
+void	sort_2(t_stack *a);
+void	sort_3(t_stack *a);
 
 #endif
