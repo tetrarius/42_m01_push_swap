@@ -1,45 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/10 10:50:25 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/15 15:08:05 by aravakia         ###   ########.fr       */
+/*   Created: 2026/04/15 14:48:02 by aravakia          #+#    #+#             */
+/*   Updated: 2026/04/15 14:56:00 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_stack *a)
+void	simple_sort(t_stack *a, t_stack *b)
 {
-	t_node	*first;
-
 	if (!a || a->size < 2)
 		return ;
-	first = a->top;
-	a->top = first->next;
-	a->top->prev = NULL;
-	first->next = NULL;
-	first->prev = a->bottom;
-	a->bottom->next = first;
-	a->bottom = first;
-	write(1, "ra\n", 3);
-}
-
-void	rra(t_stack *a)
-{
-	t_node	*last;
-
-	if (!a || a->size < 2)
-		return ;
-	last = a->bottom;
-	a->bottom = last->prev;
-	a->bottom->next = NULL;
-	last->prev = NULL;
-	last->next = a->top;
-	a->top->prev = last;
-	a->top = last;
-	write(1, "rra\n", 4);
+	while (a->size > 0)
+	{
+		move_min_to_top(a);
+		pb(a, b);
+	}
+	while (b->size > 0)
+		pa(a, b);
 }

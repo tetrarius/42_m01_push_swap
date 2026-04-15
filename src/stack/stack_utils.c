@@ -6,7 +6,7 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 16:15:04 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/06 16:16:59 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/15 11:13:02 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,22 @@ int	is_sorted(t_stack *stack)
 		current = current->next;
 	}
 	return (1);
+}
+
+t_node	*find_min(t_stack *a)
+{
+	t_node	*min;
+	t_node	*current;
+
+	if (!a || !a->top)
+		return (NULL);
+	min = a->top;
+	current = a->top->next;
+	while (current)
+	{
+		if (current->value < min->value)
+			min = current;
+		current = current->next;
+	}
+	return min;
 }

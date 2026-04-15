@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/06 16:39:06 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/15 15:07:12 by aravakia         ###   ########.fr       */
+/*   Created: 2026/04/15 15:13:59 by aravakia          #+#    #+#             */
+/*   Updated: 2026/04/15 15:15:19 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack *a)
+double	compute_disorder(t_stack *a)
 {
-	t_node	*first;
-	t_node	*second;
+	t_node	*i;
+	t_node	*j;
+	int		inv;
+	int		total;
 
 	if (!a || a->size < 2)
-		return ;
-	first = a->top;
-	second = first->next;
-	a->top = second;
-	first->next = second->next;
-	if (second->next)
-		second->next->prev = first;
-	second->next = first;
-	second->prev = NULL;
-	first->prev = second;
-	if (a->size == 2)
-		a->bottom = first;
-	write(1, "sa\n", 3);
+		return (0.0);
+	inv = 0;
+	total = a->size * (a->size - 1) / 2;
+	i = a->top;
+	while (i)
+	{
+		j = i->next;
+		while (j)
+		{
+			if (i->value > j->value)
+				inv++;
+			j = j->next;
+		}
+		i = i->next;
+	}
+	return ((double)inv / total);
 }

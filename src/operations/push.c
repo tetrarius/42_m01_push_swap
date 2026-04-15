@@ -6,7 +6,7 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 17:22:47 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/06 17:40:02 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/15 15:06:03 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	pb(t_stack *a, t_stack *b)
 	tmp->prev = NULL;
 	b->top = tmp;
 	b->size++;
+	write(1, "pb\n", 3);
 }
 
 void	pa(t_stack *a, t_stack *b)
@@ -56,4 +57,5 @@ void	pa(t_stack *a, t_stack *b)
 	tmp->prev = NULL;
 	a->top = tmp;
 	a->size++;
+	write(1, "pa\n", 3);
 }
